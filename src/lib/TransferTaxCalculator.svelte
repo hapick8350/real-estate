@@ -407,6 +407,14 @@
     font-weight: bold;
   }
 
+  .result-item.total .result-label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .result-item.total .result-value {
+    color: white;
+  }
+
   .result-label {
     display: block;
     font-size: 0.95rem;
