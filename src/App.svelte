@@ -61,7 +61,7 @@
   }
 
   h1 {
-    color: #2c3e50;
+    color: #7f8c8d;
     font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: 900;
@@ -69,7 +69,7 @@
   }
 
   .subtitle {
-    color: #5a6c7d;
+    color: #95a5a6;
     font-size: 1.2rem;
     margin: 0;
     font-weight: 700;
