@@ -64,15 +64,16 @@
     color: #1a252f;
     font-size: 2.5rem;
     margin-bottom: 10px;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
 
   .subtitle {
     color: #34495e;
     font-size: 1.2rem;
     margin: 0;
-    font-weight: 500;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
   .tab-container {
