@@ -103,7 +103,7 @@
   function calculateHoldingPeriod() {
     const acquisition = new Date(acquisitionDate);
     const transfer = new Date(transferDate);
-    const diffTime = Math.abs(transfer - acquisition);
+    const diffTime = Math.abs(transfer.getTime() - acquisition.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays / 365; // 년 단위로 반환
   }
@@ -405,16 +405,20 @@
     background: #e74c3c;
     color: white;
     font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .result-item.total .result-label {
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .result-item.total .result-value {
     color: #ffffff;
-    font-weight: 800;
+    font-weight: 900;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    font-size: 1.4rem;
   }
 
   .result-label {
@@ -422,13 +426,16 @@
     font-size: 0.95rem;
     margin-bottom: 5px;
     opacity: 0.9;
-    font-weight: 500;
+    font-weight: 600;
+    color: #2c3e50;
   }
 
   .result-value {
     display: block;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 800;
+    color: #1a252f;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
   }
 
   .result-value.positive {
