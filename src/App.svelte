@@ -61,15 +61,18 @@
   }
 
   h1 {
-    color: #2c3e50;
+    color: #1a252f;
     font-size: 2.5rem;
     margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .subtitle {
-    color: #7f8c8d;
-    font-size: 1.1rem;
+    color: #34495e;
+    font-size: 1.2rem;
     margin: 0;
+    font-weight: 500;
   }
 
   .tab-container {
@@ -89,12 +92,14 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .tab-button:hover {
     background: #3498db;
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
   }
 
   .tab-button.active {
@@ -106,16 +111,18 @@
   .calculator-container {
     background: white;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     padding: 30px;
     margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
   }
 
   footer {
     text-align: center;
-    color: #7f8c8d;
-    font-size: 0.9rem;
+    color: #34495e;
+    font-size: 1rem;
     margin-top: 40px;
+    font-weight: 500;
   }
 
   @media (max-width: 768px) {
@@ -125,6 +132,10 @@
 
     h1 {
       font-size: 2rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
     }
 
     .tab-container {

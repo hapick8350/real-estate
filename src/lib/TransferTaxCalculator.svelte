@@ -305,10 +305,11 @@
   }
 
   h2 {
-    color: #2c3e50;
+    color: #1a252f;
     text-align: center;
     margin-bottom: 30px;
     font-size: 1.8rem;
+    font-weight: 700;
   }
 
   .input-section {
@@ -325,9 +326,9 @@
 
   .input-group label {
     font-weight: 600;
-    color: #34495e;
+    color: #1a252f;
     margin-bottom: 8px;
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .input-group input,
@@ -337,12 +338,15 @@
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background: white;
+    color: #2c3e50;
   }
 
   .input-group input:focus,
   .input-group select:focus {
     outline: none;
-    border-color: #3498db;
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
   }
 
   .checkbox-group {
@@ -356,7 +360,8 @@
     align-items: center;
     cursor: pointer;
     font-weight: 500;
-    color: #34495e;
+    color: #1a252f;
+    font-size: 1rem;
   }
 
   .checkbox-label input[type="checkbox"] {
@@ -369,13 +374,15 @@
     border-radius: 12px;
     padding: 25px;
     margin-top: 30px;
+    border: 1px solid #e0e0e0;
   }
 
   .result-section h3 {
-    color: #2c3e50;
+    color: #1a252f;
     margin-bottom: 20px;
     text-align: center;
     font-size: 1.4rem;
+    font-weight: 700;
   }
 
   .result-grid {
@@ -391,6 +398,7 @@
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
   }
 
   .result-item.total {
@@ -401,15 +409,16 @@
 
   .result-label {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 5px;
-    opacity: 0.8;
+    opacity: 0.9;
+    font-weight: 500;
   }
 
   .result-value {
     display: block;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
 
   .result-value.positive {
@@ -425,23 +434,26 @@
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid #e74c3c;
+    border: 1px solid #e0e0e0;
   }
 
   .tax-info h4 {
-    color: #2c3e50;
+    color: #1a252f;
     margin-bottom: 15px;
     font-size: 1.1rem;
+    font-weight: 700;
   }
 
   .tax-info p {
     margin: 8px 0;
-    color: #555;
-    font-size: 0.95rem;
+    color: #2c3e50;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   .deduction {
     color: #27ae60 !important;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .tax-brackets {
@@ -449,6 +461,7 @@
     padding: 15px;
     border-radius: 6px;
     margin: 10px 0;
+    border: 1px solid #e0e0e0;
   }
 
   .holding-period {
