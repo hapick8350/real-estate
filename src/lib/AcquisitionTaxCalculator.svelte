@@ -1,6 +1,7 @@
 <script>
   // 취득세 계산을 위한 상태 변수들
   let propertyValue = 0; // 부동산 가액
+  let propertyValueDisplay = ''; // 부동산 가액 표시용 (쉼표 포함)
   let propertyType = 'apartment'; // 부동산 유형
   let isFirstHome = false; // 첫 주택 여부
   let isNewConstruction = false; // 신축 여부
@@ -103,6 +104,14 @@
     totalTax = acquisitionTax + educationTax + localTax;
   }
 
+  // 부동산 가액 입력 처리 함수
+  function handlePropertyValueInput(event) {
+    const value = event.target.value.replace(/,/g, '');
+    const numValue = parseInt(value) || 0;
+    propertyValue = numValue;
+    propertyValueDisplay = numValue.toLocaleString();
+  }
+
   // 입력값 변경 시 자동 계산
   $: if (propertyValue > 0) {
     calculateTax();
@@ -116,10 +125,11 @@
     <div class="input-group">
       <label for="propertyValue">부동산 가액 (원)</label>
       <input 
-        type="number" 
+        type="text" 
         id="propertyValue"
-        bind:value={propertyValue}
-        placeholder="예: 500000000"
+        value={propertyValueDisplay}
+        on:input={handlePropertyValueInput}
+        placeholder="예: 500,000,000"
         min="0"
       />
     </div>

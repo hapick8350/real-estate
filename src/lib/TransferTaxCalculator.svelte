@@ -1,7 +1,9 @@
 <script>
   // 양도소득세 계산을 위한 상태 변수들
   let acquisitionPrice = 0; // 취득가액
+  let acquisitionPriceDisplay = ''; // 취득가액 표시용 (쉼표 포함)
   let transferPrice = 0; // 양도가액
+  let transferPriceDisplay = ''; // 양도가액 표시용 (쉼표 포함)
   let acquisitionDate = new Date().toISOString().split('T')[0]; // 취득일
   let transferDate = new Date().toISOString().split('T')[0]; // 양도일
   let propertyType = 'apartment'; // 부동산 유형
@@ -133,6 +135,22 @@
     return Math.round(totalTax);
   }
 
+  // 취득가액 입력 처리 함수
+  function handleAcquisitionPriceInput(event) {
+    const value = event.target.value.replace(/,/g, '');
+    const numValue = parseInt(value) || 0;
+    acquisitionPrice = numValue;
+    acquisitionPriceDisplay = numValue.toLocaleString();
+  }
+
+  // 양도가액 입력 처리 함수
+  function handleTransferPriceInput(event) {
+    const value = event.target.value.replace(/,/g, '');
+    const numValue = parseInt(value) || 0;
+    transferPrice = numValue;
+    transferPriceDisplay = numValue.toLocaleString();
+  }
+
   // 입력값 변경 시 자동 계산
   $: if (acquisitionPrice > 0 && transferPrice > 0) {
     calculateTransferTax();
@@ -146,10 +164,11 @@
     <div class="input-group">
       <label for="acquisitionPrice">취득가액 (원)</label>
       <input 
-        type="number" 
+        type="text" 
         id="acquisitionPrice"
-        bind:value={acquisitionPrice}
-        placeholder="예: 300000000"
+        value={acquisitionPriceDisplay}
+        on:input={handleAcquisitionPriceInput}
+        placeholder="예: 300,000,000"
         min="0"
       />
     </div>
@@ -157,10 +176,11 @@
     <div class="input-group">
       <label for="transferPrice">양도가액 (원)</label>
       <input 
-        type="number" 
+        type="text" 
         id="transferPrice"
-        bind:value={transferPrice}
-        placeholder="예: 500000000"
+        value={transferPriceDisplay}
+        on:input={handleTransferPriceInput}
+        placeholder="예: 500,000,000"
         min="0"
       />
     </div>
