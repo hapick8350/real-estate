@@ -324,11 +324,13 @@
   }
 
   .result-item.total .result-label {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
+    font-weight: 600;
   }
 
   .result-item.total .result-value {
-    color: white;
+    color: #ffffff;
+    font-weight: 800;
   }
 
   .result-label {
