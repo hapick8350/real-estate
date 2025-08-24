@@ -1,0 +1,18 @@
+{
+  "name": "부동산 세금 계산기",
+  "short_name": "부동산세금계산기",
+  "description": "부동산 거래 시 필요한 취득세와 양도소득세를 간편하게 계산할 수 있는 무료 온라인 계산기입니다.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "lang": "ko",
+  "categories": ["finance", "utilities"]
+}

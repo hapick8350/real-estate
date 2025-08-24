@@ -40,6 +40,8 @@ npm run preview
 - **Build Tool**: Vite
 - **Styling**: CSS3 (Grid, Flexbox)
 - **Language**: JavaScript
+- **SEO**: 구조화된 데이터, 메타 태그 최적화
+- **PWA**: Progressive Web App 지원
 
 ## 📋 세율 정보 (2024년 기준)
 
@@ -71,6 +73,14 @@ npm run preview
 ## 📱 반응형 디자인
 
 모바일, 태블릿, 데스크톱 모든 기기에서 최적화된 사용자 경험을 제공합니다.
+
+## 🔍 SEO 최적화
+
+- **메타 태그**: 제목, 설명, 키워드 최적화
+- **구조화된 데이터**: Schema.org 마크업 적용
+- **시맨틱 HTML**: 접근성과 검색 엔진 최적화
+- **PWA 지원**: 모바일 앱 경험 제공
+- **사이트맵**: 검색 엔진 크롤링 최적화
 
 ## 🔧 프로젝트 구조
 

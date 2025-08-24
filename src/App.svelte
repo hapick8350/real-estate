@@ -8,6 +8,38 @@
 
   onMount(() => {
     document.title = '부동산 세금 계산기';
+    
+    // 구조화된 데이터 추가
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "부동산 세금 계산기",
+      "description": "부동산 거래 시 필요한 취득세와 양도소득세를 간편하게 계산할 수 있는 무료 온라인 계산기입니다.",
+      "url": window.location.href,
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "부동산 세금 계산기"
+      },
+      "featureList": [
+        "취득세 계산",
+        "양도소득세 계산",
+        "실시간 계산",
+        "무료 사용"
+      ]
+    };
+
+    // 구조화된 데이터를 페이지에 추가
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
   });
 </script>
 
@@ -18,16 +50,22 @@
       <p class="subtitle">취득세 및 양도소득세를 간편하게 계산해보세요</p>
     </header>
 
-    <div class="tab-container">
+    <div class="tab-container" role="tablist" aria-label="세금 계산기 선택">
       <button 
         class="tab-button {activeTab === 'acquisition' ? 'active' : ''}"
         on:click={() => activeTab = 'acquisition'}
+        role="tab"
+        aria-selected={activeTab === 'acquisition'}
+        aria-controls="acquisition-panel"
       >
         📥 취득세 계산
       </button>
       <button 
         class="tab-button {activeTab === 'transfer' ? 'active' : ''}"
         on:click={() => activeTab = 'transfer'}
+        role="tab"
+        aria-selected={activeTab === 'transfer'}
+        aria-controls="transfer-panel"
       >
         📤 양도소득세 계산
       </button>
@@ -35,14 +73,19 @@
 
     <div class="calculator-container">
       {#if activeTab === 'acquisition'}
-        <AcquisitionTaxCalculator />
+        <div id="acquisition-panel" role="tabpanel" aria-labelledby="acquisition-tab">
+          <AcquisitionTaxCalculator />
+        </div>
       {:else}
-        <TransferTaxCalculator />
+        <div id="transfer-panel" role="tabpanel" aria-labelledby="transfer-tab">
+          <TransferTaxCalculator />
+        </div>
       {/if}
     </div>
 
     <footer>
       <p>© {currentYear} 부동산 세금 계산기 - 최신 세법 기준으로 계산됩니다</p>
+      <p><small>이 계산기는 참고용이며, 정확한 세금 계산은 전문가와 상담하시기 바랍니다.</small></p>
     </footer>
   </div>
 </main>
